@@ -1,11 +1,11 @@
 public class Planet {
 
-	public double xxPos;
-	public double yyPos;
-	public double xxVel;
-	public double yyVel;
-	public double mass;
-	public String imgFileName;
+	private double xxPos;
+	private double yyPos;
+	private double xxVel;
+	private double yyVel;
+	private double mass;
+	private String imgFileName;
 	// static final double G = 6.67e-11;
 
 	public Planet(double xP, double yP, double xV, double yV, double m, String img){
@@ -87,6 +87,30 @@ public class Planet {
 	//Draw planet picture in the canvas.
 	public void draw(){
 		StdDraw.picture(xxPos, yyPos, "images/"+imgFileName);
+	}
+
+	public String imgFileName(){
+		return imgFileName;
+	}
+
+	public double mass(){
+		return mass;
+	}
+
+	public double xxPos(){
+		return xxPos;
+	}
+
+	public double yyPos(){
+		return yyPos;
+	}
+
+	public double xxVel(){
+		return xxVel;
+	}
+
+	public double yyVel(){
+		return yyVel;
 	}
 
 }
