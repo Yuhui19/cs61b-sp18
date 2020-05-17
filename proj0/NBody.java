@@ -16,7 +16,7 @@ public class NBody {
 
 		int line = in.readInt();
 		double radius = in.readDouble();
-		Planet[] pArr = new Planet[line];
+		Planet[] planets = new Planet[line];
 		int j=0;
 
 		while(j<line){
@@ -32,10 +32,10 @@ public class NBody {
 			// 	}
 			// 	break;
 			// }
-			pArr[j] = new Planet(xPos, yPos, xVel, yVel, mass, name);
+			planets[j] = new Planet(xPos, yPos, xVel, yVel, mass, name);
 			j++;
 		}
-		return pArr;
+		return planets;
 	}
 
 	public static void main(String[] args){
@@ -43,7 +43,7 @@ public class NBody {
 		double dt = Double.valueOf(args[1]);
 		String filename = args[2];
 		double radius = readRadius(filename);
-		Planet[] pArr= readPlanets(filename);
+		Planet[] planets= readPlanets(filename);
 
 		//Set canvas to double size of radius.
 		StdDraw.setScale(-radius, radius);
@@ -52,7 +52,7 @@ public class NBody {
 		String imageToDraw = "images/starfield.jpg";
 		StdDraw.picture(0, 0, imageToDraw);
 
-		for(Planet p : pArr){
+		for(Planet p : planets){
 			p.draw();
 		}
 
@@ -61,21 +61,21 @@ public class NBody {
 
 		double time = 0.0;
 		while(time <= T){
-			double[] xForces = new double[pArr.length];
-			double[] yForces = new double[pArr.length];
+			double[] xForces = new double[planets.length];
+			double[] yForces = new double[planets.length];
 
-			for(int i=0;i<pArr.length;i++){
-				xForces[i] = pArr[i].calcNetForceExertedByX(pArr);
-				yForces[i] = pArr[i].calcNetForceExertedByY(pArr);
+			for(int i=0;i<planets.length;i++){
+				xForces[i] = planets[i].calcNetForceExertedByX(planets);
+				yForces[i] = planets[i].calcNetForceExertedByY(planets);
 			}
 
-			for(int i=0;i<pArr.length;i++){
-				pArr[i].update(dt, xForces[i], yForces[i]);
+			for(int i=0;i<planets.length;i++){
+				planets[i].update(dt, xForces[i], yForces[i]);
 			}
 
 			StdDraw.picture(0, 0, imageToDraw);
 
-			for(Planet p : pArr){
+			for(Planet p : planets){
 				p.draw();
 			}
 			StdDraw.show();
