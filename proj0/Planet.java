@@ -89,28 +89,28 @@ public class Planet {
 		StdDraw.picture(xxPos, yyPos, "images/"+imgFileName);
 	}
 
-	public String imgFileName(){
-		return imgFileName;
-	}
+	// public String imgFileName(){
+	// 	return imgFileName;
+	// }
 
-	public double mass(){
-		return mass;
-	}
+	// public double mass(){
+	// 	return mass;
+	// }
 
-	public double xxPos(){
-		return xxPos;
-	}
+	// public double xxPos(){
+	// 	return xxPos;
+	// }
 
-	public double yyPos(){
-		return yyPos;
-	}
+	// public double yyPos(){
+	// 	return yyPos;
+	// }
 
-	public double xxVel(){
-		return xxVel;
-	}
+	// public double xxVel(){
+	// 	return xxVel;
+	// }
 
-	public double yyVel(){
-		return yyVel;
-	}
+	// public double yyVel(){
+	// 	return yyVel;
+	// }
 
 }
