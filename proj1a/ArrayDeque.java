@@ -13,31 +13,32 @@ public class ArrayDeque<T> {
         last = -1;
     }
 
-    private void order() {
+    private T[] order(T[] arr) {
         if (first == 0) {
-            return;
+            return arr;
         }
         int length = arr.length;
         T[] temp = (T[]) new Object[length];
-        for (int i = 0; i < length; i++) {
-            temp[i] = arr[i];
-        }
+//        for (int i = 0; i < length; i++) {
+//            temp[i] = arr[i];
+//        }
         int index = 0;
         for (int i = first; i < length; i++) {
-            arr[index] = temp[i];
+            temp[index] = arr[i];
             index++;
         }
         for (int i = 0; i <= last; i++) {
-            arr[index] = temp[i];
+            temp[index] = arr[i];
             index++;
         }
         first = 0;
         last = index - 1;
+        return temp;
     }
 
     private void doubleLength() {
         int length = arr.length;
-        order();
+        arr = order(arr);
         T[] temp = (T[]) new Object[length * 2];
 //        int index = 0;
         for (int i = 0; i < length; i++) {
@@ -51,11 +52,11 @@ public class ArrayDeque<T> {
         if (length <= 8) {
             return;
         }
-        order();
+        arr = order(arr);
         length = length / 2;
         T[] temp = (T[]) new Object[length];
 //        int index = 0;
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < size; i++) {
             temp[i] = arr[i];
 //            index++;
         }
@@ -107,7 +108,7 @@ public class ArrayDeque<T> {
 
     //Prints the items in the deque from first to last, separated by a space.
     public void printDeque() {
-        order();
+        arr = order(arr);
         for (int i = 0; i < size; i++) {
             System.out.println(arr[i] + " ");
         }
