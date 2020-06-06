@@ -53,7 +53,7 @@ public class LinkedListDequeTest {
 
 		lld1.addLast("back");
 		passed = checkSize(3, lld1.size()) && passed;
-		lld1.addFirst("test");
+//		lld1.addFirst("test");
 		System.out.println("Printing out deque: ");
 		lld1.printDeque();
 
