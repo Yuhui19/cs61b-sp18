@@ -130,7 +130,7 @@ public class ArrayDeque<T> {
             return null;
         }
         T output = arr[first];
-        arr[first] = null;
+//        arr[first] = null;
         if (first == 0) {
             for (int i = 1; i < size; i++) {
                 arr[i - 1] = arr[i];
@@ -161,7 +161,7 @@ public class ArrayDeque<T> {
             last -= arr.length;
         }
         T output = arr[last];
-        arr[last] = null;
+//        arr[last] = null;
         last--;
         if (last < 0 && size > 0) {
             last += arr.length;
