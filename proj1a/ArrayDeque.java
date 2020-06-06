@@ -85,6 +85,9 @@ public class ArrayDeque<T> {
     //Adds an item of type T to the back of the deque.
     public void addLast(T item) {
         last++;
+        if (last >= arr.length) {
+            last -= arr.length;
+        }
         arr[last] = item;
         size++;
         double usage = (double)size / arr.length;
