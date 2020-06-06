@@ -199,7 +199,7 @@ public class ArrayDeque<T> {
         }
         int gap = arr.length - first;
         if (index < gap) {
-            return arr[first - index];
+            return arr[first + index];
         } else {
             return arr[first + index - arr.length];
         }
