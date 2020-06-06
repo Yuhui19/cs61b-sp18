@@ -39,10 +39,9 @@ public class ArrayDeque<T> {
         int length = arr.length;
         order();
         T[] temp = (T[]) new Object[length * 2];
-        int index = 0;
-        for (T t : arr) {
-            temp[index] = t;
-            index++;
+//        int index = 0;
+        for (int i = 0; i < length; i++) {
+            temp[i] = arr[i];
         }
         arr = temp;
     }
