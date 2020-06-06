@@ -86,14 +86,9 @@ public class LinkedListDequeTest {
 //        ArrayDeque<Integer> lld1 = new ArrayDeque<Integer>();
 //        lld1.addFirst(0);
 //        lld1.isEmpty();
-//        lld1.addFirst(2);
 //        lld1.removeLast();
-//        lld1.addFirst(4);
-//        lld1.addFirst(5);
-//        lld1.addFirst(6);
-//        System.out.println(lld1.size());
-//        System.out.println(lld1.getLength());
-//        lld1.addFirst(7);
+//        lld1.addFirst(3);
+//        lld1.removeLast();
 //    }
 
     public static void main(String[] args) {

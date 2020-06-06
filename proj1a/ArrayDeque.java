@@ -157,6 +157,9 @@ public class ArrayDeque<T> {
         if (size <= 0) {
             return null;
         }
+        if (last >= arr.length) {
+            last -= arr.length;
+        }
         T output = arr[last];
         arr[last] = null;
         last--;
