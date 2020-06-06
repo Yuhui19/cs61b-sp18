@@ -2,8 +2,8 @@ public class ArrayDeque<T> {
 
     private int size;
     private T[] arr;
-    public int first;
-    public int last;
+    private int first;
+    private int last;
 
     //Creates an empty linked list deque.
     public ArrayDeque() {
@@ -149,6 +149,10 @@ public class ArrayDeque<T> {
         if (usage < 0.25) {
             halfLength();
         }
+        if (size == 0) {
+            first = 0;
+            last = -1;
+        }
         return output;
     }
     //constant
@@ -171,6 +175,10 @@ public class ArrayDeque<T> {
 //        System.out.println(usage);
         if (usage < 0.25) {
             halfLength();
+        }
+        if (size == 0) {
+            first = 0;
+            last = -1;
         }
         return output;
     }
