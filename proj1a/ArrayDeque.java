@@ -2,8 +2,8 @@ public class ArrayDeque<T> {
 
     private int size;
     private T[] arr;
-    private int first;
-    private int last;
+    public int first;
+    public int last;
 
     //Creates an empty linked list deque.
     public ArrayDeque() {
@@ -185,6 +185,9 @@ public class ArrayDeque<T> {
         }
         if (first == 0) {
             return arr[index];
+        }
+        if (first <= last) {
+            return arr[first + index];
         }
         int gap = arr.length - first;
         if (index < gap) {
