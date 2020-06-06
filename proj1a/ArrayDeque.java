@@ -13,22 +13,19 @@ public class ArrayDeque<T> {
         last = -1;
     }
 
-    private T[] order(T[] arr) {
+    private T[] order(T[] array) {
         if (first == 0) {
-            return arr;
+            return array;
         }
-        int length = arr.length;
+        int length = array.length;
         T[] temp = (T[]) new Object[length];
-//        for (int i = 0; i < length; i++) {
-//            temp[i] = arr[i];
-//        }
         int index = 0;
         for (int i = first; i < length; i++) {
-            temp[index] = arr[i];
+            temp[index] = array[i];
             index++;
         }
         for (int i = 0; i <= last; i++) {
-            temp[index] = arr[i];
+            temp[index] = array[i];
             index++;
         }
         first = 0;
@@ -77,7 +74,8 @@ public class ArrayDeque<T> {
             arr[first] = item;
         }
         size++;
-        double usage = size / arr.length;
+        double usage = (double)size / arr.length;
+//        System.out.println(usage);
         if (usage > 0.5) {
             doubleLength();
         }
@@ -89,7 +87,8 @@ public class ArrayDeque<T> {
         last++;
         arr[last] = item;
         size++;
-        double usage = size / arr.length;
+        double usage = (double)size / arr.length;
+//        System.out.println(usage);
         if (usage > 0.5) {
             doubleLength();
         }
@@ -133,7 +132,8 @@ public class ArrayDeque<T> {
             }
         }
         size--;
-        double usage = size / arr.length;
+        double usage = (double)size / arr.length;
+//        System.out.println(usage);
         if (usage < 0.25) {
             halfLength();
         }
@@ -148,7 +148,8 @@ public class ArrayDeque<T> {
         T output = arr[last];
         last--;
         size--;
-        double usage = size / arr.length;
+        double usage = (double)size / arr.length;
+//        System.out.println(usage);
         if (usage < 0.25) {
             halfLength();
         }
@@ -172,5 +173,9 @@ public class ArrayDeque<T> {
         } else {
             return arr[first + index - arr.length];
         }
+    }
+    
+    public int getLength(){
+        return arr.length;
     }
 }

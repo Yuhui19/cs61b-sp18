@@ -52,6 +52,14 @@ public class LinkedListDequeTest {
         lld1.addLast("back");
         passed = checkSize(3, lld1.size()) && passed;
 //		lld1.addFirst("test");
+//        for (int i = 0; i < 100; i++) {
+//            lld1.addLast(String.valueOf(i));
+//        }
+//        System.out.println(lld1.size());
+//        System.out.println(lld1.getLength());
+//        for (int i = 0; i < 100; i++) {
+//            lld1.removeFirst();
+//        }
         System.out.println("Printing out deque: ");
         lld1.printDeque();
 
