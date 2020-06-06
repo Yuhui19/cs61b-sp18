@@ -4,27 +4,27 @@ ArrayDeque:
 
 Q: Give an example of at least one idea from the staff solution that would have made your solution better (if any).
 
-A: 
+A: More helper function.
 
 Q: What's something you felt proud of in your code, if anything?
 
-A:
+A: At lease, it works.
 
 Q: What's something that was particularly inelegant in your code, if anything?
 
-A:
+A: I have many many if statement to avoid corner cases which I should do better next time.
 
 Q: What did you learn by talking to your partner about writing ArrayDeque?
 
-A:
+A: Something.
 
 Q: What do you wish you would have known before writing ArrayDeque, if anything?
 
-A:
+A: No.
 
 Q: If you wrote ArrayDeque again, what would you do differently, if anything?
 
-A:
+A: I would think more deeply to avoid corner cases instead of just rely on gradescope.
 
 -----
 
@@ -32,27 +32,27 @@ LinkedListDeque:
 
 Q: Give an example of at least one idea from the staff solution that would have made your solution better (if any).
 
-A: 
+A: I think double linked node is cool, better than single linked node, but of course, harder.
 
 Q: What's something you felt proud of in your code, if anything?
 
-A:
+A: It works.
 
 Q: What's something that was particularly inelegant in your code, if anything?
 
-A:
+A: I think my linked list deque is good.
 
 Q: What did you learn by talking to your partner about writing LinkedListDeque?
 
-A:
+A: No.
 
 Q: What do you wish you would have known before writing LinkedListDeque, if anything?
 
-A:
+A: No.
 
 Q: If you wrote LinkedListDeque again, what would you do differently, if anything?
 
-A:
+A: No.
 
 -----
 
@@ -60,4 +60,4 @@ Meta:
 
 Q: Did you like this design review process? Anything we should do differently next time?
 
-A: 
+A: Good. Gradescope is perfect.
