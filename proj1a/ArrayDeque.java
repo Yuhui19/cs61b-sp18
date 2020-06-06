@@ -53,11 +53,12 @@ public class ArrayDeque<T> {
             return;
         }
         order();
-        T[] temp = (T[]) new Object[length / 2];
-        int index = 0;
-        for (int i = 0; i < size; i++) {
-            temp[index] = arr[i];
-            index++;
+        length = length / 2;
+        T[] temp = (T[]) new Object[length];
+//        int index = 0;
+        for (int i = 0; i < length; i++) {
+            temp[i] = arr[i];
+//            index++;
         }
         arr = temp;
     }
