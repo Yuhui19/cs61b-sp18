@@ -20,13 +20,20 @@ public class ArrayDeque<T> {
         int length = array.length;
         T[] temp = (T[]) new Object[length];
         int index = 0;
-        for (int i = first; i < length; i++) {
-            temp[index] = array[i];
-            index++;
-        }
-        for (int i = 0; i <= last; i++) {
-            temp[index] = array[i];
-            index++;
+        if (last < first) {
+            for (int i = first; i < length; i++) {
+                temp[index] = array[i];
+                index++;
+            }
+            for (int i = 0; i <= last; i++) {
+                temp[index] = array[i];
+                index++;
+            }
+        } else {
+            for (int i = first; i <= last; i++) {
+                temp[index] = arr[i];
+                index++;
+            }
         }
         first = 0;
         last = index - 1;
@@ -74,7 +81,7 @@ public class ArrayDeque<T> {
             arr[first] = item;
         }
         size++;
-        double usage = (double)size / arr.length;
+        double usage = (double) size / arr.length;
 //        System.out.println(usage);
         if (usage > 0.5) {
             doubleLength();
@@ -90,7 +97,7 @@ public class ArrayDeque<T> {
         }
         arr[last] = item;
         size++;
-        double usage = (double)size / arr.length;
+        double usage = (double) size / arr.length;
 //        System.out.println(usage);
         if (usage > 0.5) {
             doubleLength();
@@ -137,7 +144,7 @@ public class ArrayDeque<T> {
             }
         }
         size--;
-        double usage = (double)size / arr.length;
+        double usage = (double) size / arr.length;
 //        System.out.println(usage);
         if (usage < 0.25) {
             halfLength();
@@ -157,7 +164,7 @@ public class ArrayDeque<T> {
             last += arr.length;
         }
         size--;
-        double usage = (double)size / arr.length;
+        double usage = (double) size / arr.length;
 //        System.out.println(usage);
         if (usage < 0.25) {
             halfLength();
@@ -184,7 +191,7 @@ public class ArrayDeque<T> {
         }
     }
     
-//    public int getLength(){
+//    public int getLength() {
 //        return arr.length;
 //    }
 }
