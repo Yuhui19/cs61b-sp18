@@ -63,7 +63,7 @@ public class ArrayDeque<T> {
     //Adds an item of type T to the front of the deque.
     //constant
     public void addFirst(T item) {
-        if (size == 0) {
+        if (size <= 0) {
             arr[0] = item;
             last++;
         } else {
@@ -120,12 +120,14 @@ public class ArrayDeque<T> {
             return null;
         }
         T output = arr[first];
+        arr[first] = null;
         if (first == 0) {
             for (int i = 1; i < size; i++) {
                 arr[i - 1] = arr[i];
             }
             last--;
         } else {
+            
             first++;
             if (first >= arr.length) {
                 first -= arr.length;
@@ -146,7 +148,11 @@ public class ArrayDeque<T> {
             return null;
         }
         T output = arr[last];
+        arr[last] = null;
         last--;
+        if (last < 0 && size > 0) {
+            last += arr.length;
+        }
         size--;
         double usage = (double)size / arr.length;
 //        System.out.println(usage);
@@ -169,13 +175,13 @@ public class ArrayDeque<T> {
         }
         int gap = arr.length - first;
         if (index < gap) {
-            return arr[first + gap - index];
+            return arr[first - index];
         } else {
             return arr[first + index - arr.length];
         }
     }
     
-    public int getLength(){
-        return arr.length;
-    }
+//    public int getLength(){
+//        return arr.length;
+//    }
 }
