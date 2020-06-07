@@ -31,10 +31,10 @@ public class TestPalindrome {
         assertTrue(palindrome.isPalindrome(""));
         assertFalse(palindrome.isPalindrome("cat"));
     
-        assertTrue(palindrome.isPalindrome("refer", cc));
-        assertTrue(palindrome.isPalindrome("noon", cc));
-        assertTrue(palindrome.isPalindrome("c", cc));
-        assertTrue(palindrome.isPalindrome("", cc));
-        assertFalse(palindrome.isPalindrome("cat", cc));
+        OffByOne obo = new OffByOne();
+        assertTrue(palindrome.isPalindrome("zyzy", obo));
+        assertTrue(palindrome.isPalindrome("yyxz", obo));
+        assertTrue(palindrome.isPalindrome("yyyxz", obo));
+        assertFalse(palindrome.isPalindrome("aa", obo));
     }
 }
