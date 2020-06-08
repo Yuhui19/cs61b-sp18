@@ -65,24 +65,24 @@ public class TestArrayDequeGold {
 //		}
 //	}
 	
-	@Test
-	public void testRemoveLast() {
-		ArrayDequeSolution<Integer> ads = new ArrayDequeSolution<>();
-		StudentArrayDeque<Integer> sad = new StudentArrayDeque<>();
-		// addLast
-		for (int i=0; i<100; i++) {
-			int random = StdRandom.uniform(100);
-			ads.addLast(random);
-			sad.addLast(random);
-		}
-		for (int i=0; i<100; i++) {
-			Integer actual = ads.removeLast();
-			Integer expected = sad.removeLast();
-			assertEquals("Oh noooo!\nThis is bad in removeLast():\n   Random number " + actual
-								 + " not equal to " + expected + "!",
-					expected, actual);
-		}
-	}
+//	@Test
+//	public void testRemoveLast() {
+//		ArrayDequeSolution<Integer> ads = new ArrayDequeSolution<>();
+//		StudentArrayDeque<Integer> sad = new StudentArrayDeque<>();
+//		// addLast
+//		for (int i=0; i<100; i++) {
+//			int random = StdRandom.uniform(100);
+//			ads.addLast(random);
+//			sad.addLast(random);
+//		}
+//		for (int i=0; i<100; i++) {
+//			Integer actual = ads.removeLast();
+//			Integer expected = sad.removeLast();
+//			assertEquals("Oh noooo!\nThis is bad in removeLast():\n   Random number " + actual
+//								 + " not equal to " + expected + "!",
+//					expected, actual);
+//		}
+//	}
 	
 	@Test
 	public void testArratDeque2() {
