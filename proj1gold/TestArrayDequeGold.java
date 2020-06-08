@@ -83,4 +83,31 @@ public class TestArrayDequeGold {
 					expected, actual);
 		}
 	}
+	
+	@Test
+	public void testArratDeque2() {
+		ArrayDequeSolution<Integer> ads = new ArrayDequeSolution<>();
+		StudentArrayDeque<Integer> sad = new StudentArrayDeque<>();
+		int random = StdRandom.uniform(100);
+		ads.addFirst(random);
+		sad.addFirst(random);
+		assertEquals("addFirst("+random+")", ads.get(0), sad.get(0));
+		System.out.println("addFirst("+random+")");
+		
+		random = StdRandom.uniform(100);
+		ads.addLast(random);
+		sad.addLast(random);
+		assertEquals("addLast("+random+")", ads.get(1), sad.get(1));
+		System.out.println("addLast("+random+")");
+		
+		int actual = ads.removeFirst();
+		int expected = ads.removeFirst();
+		assertEquals("removeFirst()", actual, expected);
+		System.out.println("removeFirst()");
+		
+		actual = ads.removeLast();
+		expected = sad.removeLast();
+		assertEquals("removeLast()", actual, expected);
+		System.out.println("removeLast()");
+	}
 }
