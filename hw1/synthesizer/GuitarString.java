@@ -1,10 +1,10 @@
-package synthesizer;// TODO: Make sure to make this class a part of the synthesizer package
+package synthesizer; // TODO: Make sure to make this class a part of the synthesizer package
 //package <package name>;
 
-import synthesizer.ArrayRingBuffer;
+//import synthesizer.ArrayRingBuffer;
 
 //Make sure this class is public
-public class GuitarString extends ArrayRingBuffer {
+public class GuitarString {
     /** Constants. Do not change. In case you're curious, the keyword final means
      * the values cannot be changed at runtime. We'll discuss this and other topics
      * in lecture on Friday. */
@@ -20,8 +20,10 @@ public class GuitarString extends ArrayRingBuffer {
         //       cast the result of this divsion operation into an int. For better
         //       accuracy, use the Math.round() function before casting.
         //       Your buffer should be initially filled with zeros.
-        super((int)Math.round(SR / frequency));
-        buffer = new ArrayRingBuffer<>((int)Math.round(SR / frequency));
+        buffer = new ArrayRingBuffer<>((int) Math.round(SR / frequency));
+        for (int i = 0; i < buffer.capacity(); i += 1) {
+            buffer.enqueue(0.0);
+        }
     }
 
 
@@ -35,7 +37,7 @@ public class GuitarString extends ArrayRingBuffer {
         while (!this.buffer.isEmpty()) {
             this.buffer.dequeue();
         }
-        for (int i = 0; i < this.capacity; i++) {
+        for (int i = 0; i < buffer.capacity(); i++) {
             this.buffer.enqueue(Math.random() - 0.5);
         }
     }
@@ -49,7 +51,7 @@ public class GuitarString extends ArrayRingBuffer {
         //       Do not call StdAudio.play().
         double front = this.buffer.dequeue();
         double second = this.buffer.peek();
-        double next = DECAY * (front + second) / 2;
+        double next = DECAY * (front + second) * 0.5;
         this.buffer.enqueue(next);
     }
 
